@@ -1,0 +1,26 @@
+- hosts: my_workers
+  tasks:
+         - name: "installing httpd software"
+           package:
+                   name: httpd
+                   state: present
+           vars:
+                   ansible_python_interpreter: /usr/bin/python
+         - name: "createing folder"
+           file:
+                   path: /var/www/lw
+                   state: directory
+         - name: "copying the file"
+           copy:
+                   src: "hi.html"
+                   dest: "/var/www/lw"
+         - name: "changing the conf file"
+           template:
+                   src: cfg.conf
+                   dest: /etc/httpd/conf.d
+         - name: "restarting"
+           service:
+                   name: httpd
+                   state: restarted
+                   enabled: yes
+
