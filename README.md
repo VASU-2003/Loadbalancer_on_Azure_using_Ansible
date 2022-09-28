@@ -5,3 +5,4 @@
 3. httpd.yml :- it is for creation of webserver on the worker nodes
 4. cfg.cfg :- It is for changing the port number and default directory for the web server
 5.haproxy.cfg :- configuration file for the haproxy server 
+6. hi.html :- just a text file for testcase to check the working of webservers
